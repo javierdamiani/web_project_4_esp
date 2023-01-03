@@ -1,0 +1,8 @@
+.profile__info-explorer {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  border: 1px solid violet;
+  max-height: 22px;
+}
