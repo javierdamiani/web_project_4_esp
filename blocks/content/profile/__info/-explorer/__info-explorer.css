@@ -6,3 +6,10 @@
   border: 1px solid violet;
   max-height: 22px;
 }
+@media screen and (max-width: 320px) {
+  .profile__info-explorer {
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+  }
+}

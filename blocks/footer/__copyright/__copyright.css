@@ -4,3 +4,8 @@
   max-width: 886px;
   width: 100%;
 }
+@media screen and (max-width: 320px) {
+  .footer__copyright {
+    margin-left: 19px;
+  }
+}

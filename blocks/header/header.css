@@ -3,3 +3,9 @@
   max-width: 880px;
   border: 1px solid yellow;
 }
+@media screen and (max-width: 320px) {
+  .header {
+    max-width: 320px;
+    max-height: 56px;
+  }
+}
