@@ -1,10 +1,7 @@
-/* .profile__info-edit_button {
-  max-width: 24px;
-  max-height: 24px;
-} */
 .profile__info-edit_button:hover {
   opacity: 0.4;
   transition: opacity 0.5s linear;
+  cursor: pointer;
 }
 @media screen and (max-width: 320px) {
   .profile__info-edit_button {

@@ -1,0 +1,10 @@
+.popup__container-form-toggle {
+  max-width: 40px;
+  max-height: 40px;
+  position: absolute;
+}
+.popup__container-form-toggle:hover {
+  opacity: 0.4;
+  transition: opacity 0.5s linear;
+  cursor: pointer;
+}

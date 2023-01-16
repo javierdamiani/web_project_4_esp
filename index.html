@@ -167,5 +167,55 @@
         <p class="footer__copyright">© 2023 Alrededor de los EEUU</p>
       </footer>
     </div>
+
+    <!--Acá empiezan los popUps
+        
+        para el BEM: bloque__elemento-elementoNombre2_modificador
+    -->
+
+    <form class="popup">
+      <fieldset class="popup__container">
+        <div class="popup__container-form">
+          <div class="popup__container-form-toggle">
+            <img
+              src="./images/close_icon.svg"
+              alt="Equis para cerrar el formulario"
+              class="popup__container-form-toggle_close"
+            />
+          </div>
+          <!-- <div class="popup__container-form-content"> -->
+          <h2 class="popup__container-form-heading">Edit profile</h2>
+          <div class="popup__container-form-inputs">
+            <input
+              type="text"
+              class="popup__container-form-inputs_name"
+              placeholder="Nombre"
+              value="Nombre"
+            />
+            <img
+              src="./images/line.svg"
+              alt="Línea que divide los inputs"
+              class="popup__container-form-inputs_line"
+            />
+            <input
+              type="text"
+              class="popup__container-form-inputs_about"
+              placeholder="Acerca de mí"
+            />
+            <img
+              src="./images/line.svg"
+              alt="Línea que divide los inputs"
+              class="popup__container-form-inputs_line"
+            />
+            <button type="submit" class="popup__container-form-inputs_button">
+              Guardar
+            </button>
+          </div>
+          <!-- </div> -->
+        </div>
+      </fieldset>
+    </form>
+
+    <script src="./script.js"></script>
   </body>
 </html>

@@ -1,0 +1,10 @@
+.popup__container-form-inputs_name {
+  max-width: 358px;
+  max-height: 14px;
+  width: 100%;
+  border: 0;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
