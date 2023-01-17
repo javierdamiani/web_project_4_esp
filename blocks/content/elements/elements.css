@@ -11,3 +11,9 @@
     grid-gap: 20px;
   }
 }
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  .elements {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

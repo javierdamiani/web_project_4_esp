@@ -19,15 +19,12 @@ let buttonSubmit = document.querySelector(
 
 function openPopUp() {
   popUp.classList.add("popup__opened");
-  console.log(profileInfoName);
-  console.log(popupFormName);
   popupFormName.value = profileInfoName.textContent;
   popupFormAbout.value = profileInfoAbout.textContent;
 }
 
 function closePopUp() {
   popUp.classList.remove("popup__opened");
-  console.log("Se quitó la función");
 }
 
 function handleProfileFormSubmit(evt) {

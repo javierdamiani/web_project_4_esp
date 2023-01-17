@@ -17,3 +17,8 @@
     align-items: center;
   }
 }
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  .profile {
+    max-width: 581px;
+  }
+}
