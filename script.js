@@ -4,18 +4,45 @@ const closePopUpBtn = document.querySelector(
   ".popup__container-form-toggle_close"
 );
 //Variables para jalar el nombre de la web
-let profileInfoName = document.querySelector(".profile__info-name");
-let profileInfoAbout = document.querySelector(".profile__info-explorer");
+const profileInfoName = document.querySelector(".profile__info-name");
+const profileInfoAbout = document.querySelector(".profile__info-explorer");
 
-let popupFormName = document.querySelector(
+const popupFormName = document.querySelector(
   ".popup__container-form-inputs_name"
 );
-let popupFormAbout = document.querySelector(
+const popupFormAbout = document.querySelector(
   ".popup__container-form-inputs_about"
 );
-let buttonSubmit = document.querySelector(
+const buttonSubmit = document.querySelector(
   ".popup__container-form-inputs_button"
 );
+
+const initialCards = [
+  {
+    name: "Valle de Yosemite",
+    link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
+  },
+  {
+    name: "Lago Louise",
+    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg",
+  },
+  {
+    name: "Montañas Calvas",
+    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+    link: "https://code.s3.yandex.net/web-code/latemar.jpg",
+  },
+  {
+    name: "Parque Nacional de la Vanoise",
+    link: "https://code.s3.yandex.net/web-code/vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://code.s3.yandex.net/web-code/lago.jpg",
+  },
+];
 
 function openPopUp() {
   popUp.classList.add("popup__opened");
