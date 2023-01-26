@@ -48,7 +48,30 @@
             />
           </button>
         </div>
-        <div class="elements"></div>
+        <div class="elements">
+          <template class="card__template" id="cardTemplate">
+            <div class="elements__element">
+              <img
+                src="./images/trashCan.svg"
+                alt=""
+                class="elements__element-trash"
+                id="trashCan"
+              />
+              <img
+                src="./images/like_button.svg"
+                alt="Botón de corazón para dar like"
+                class="elements__element-button"
+              />
+              <img src="" alt="" class="elements__element-image" id="cardImg" />
+              <p class="elements__element-text" id="cardTitle"></p>
+              <img
+                src="./images/Rectangle.png"
+                alt=""
+                class="elements__element-rectangle"
+              />
+            </div>
+          </template>
+        </div>
       </main>
       <footer class="footer">
         <p class="footer__copyright">© 2023 Alrededor de los EEUU</p>
@@ -126,7 +149,7 @@
             <input
               type="text"
               class="popup__container-form-inputs_name"
-              id="titulo"
+              id="title"
               placeholder="Título"
             />
             <img
@@ -137,7 +160,7 @@
             <input
               type="text"
               class="popup__container-form-inputs_about"
-              id="enlaceImg"
+              id="linkImg"
               placeholder="Enlace a la imagen"
             />
             <img

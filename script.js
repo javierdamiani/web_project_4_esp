@@ -12,6 +12,10 @@ const buttonSubmit = document.querySelector("#btnSubmit");
 const addBtn = document.querySelector("#addImg");
 const popUpAdd = document.querySelector("#popUpAdd");
 const closePopUpAdd = document.querySelector("#closeAddBtn");
+const newTitle = document.querySelector("#title");
+const newImg = document.querySelector("#linkImg");
+const addSubmit = document.querySelector("#btnCreate");
+const templateCard = document.querySelector("#cardTemplate");
 
 //Variables para crear las tarjetas iniciales con JS
 const initialCards = [
@@ -43,27 +47,33 @@ const initialCards = [
 
 const cardContainer = document.querySelector(".elements");
 
-const templateCard = initialCards.forEach((element) => {
-  const card = document.createElement("div");
-  card.classList.add("elements__element");
-  cardContainer.append(card);
-  const likeButton = document.createElement("img");
-  likeButton.classList.add("elements__element-button");
-  likeButton.src = "./images/like_button.svg";
-  card.append(likeButton);
-  const image = document.createElement("img");
-  image.classList.add("elements__element-image");
-  image.src = element.link;
-  card.append(image);
-  const paragraph = document.createElement("p");
-  paragraph.classList.add("elements__element-text");
-  paragraph.textContent = element.name;
-  card.append(paragraph);
-  const rectangle = document.createElement("img");
-  rectangle.classList.add("elements__element-rectangle");
-  rectangle.src = "./images/Rectangle.png";
-  card.append(rectangle);
+function cardGenerator(card) {
+  const cardItem = templateCard.content.cloneNode(true);
+  const cardLink = cardItem.querySelector(".elements__element-image");
+  const trashCan = cardItem.querySelector("#trashCan");
+  cardItem.querySelector("#cardImg").src = card.link;
+  cardItem.querySelector("#cardTitle").textContent = card.name;
+  trashCan.addEventListener("click", function () {
+    const cardItem = trashCan.closest(".elements__element");
+    cardItem.remove();
+  });
+  return cardItem;
+}
+
+initialCards.forEach(function (element) {
+  const cardElement = cardGenerator(element);
+  cardContainer.append(cardElement);
 });
+
+function handleAddFormSubmit(evt, link, name) {
+  evt.preventDefault();
+  const createdCard = cardGenerator({
+    link: newImg.value,
+    name: newTitle.value,
+  });
+  cardContainer.prepend(createdCard);
+  closeAddPopUp();
+}
 
 function openPopUp() {
   popUp.classList.add("popup__opened");
@@ -88,8 +98,11 @@ function closeAddPopUp() {
   popUpAdd.classList.remove("popup__opened");
 }
 
+//Función para agregar nuevas tarjetas
+
 editBtn.addEventListener("click", openPopUp);
 closePopUpBtn.addEventListener("click", closePopUp);
 buttonSubmit.addEventListener("click", handleProfileFormSubmit);
 addBtn.addEventListener("click", openAddPopUp);
 closePopUpAdd.addEventListener("click", closeAddPopUp);
+addSubmit.addEventListener("click", handleAddFormSubmit);

@@ -27,9 +27,9 @@
 @import url(../blocks/popup/__container/-form/-inputs/_line/_line.css);
 @import url(../blocks/content/elements/elements.css);
 @import url(../blocks/content/elements/__element/element.css);
+@import url(../blocks/content/elements/__element/-trash/__element-trash.css);
 @import url(../blocks/content/elements/__element/-image/__element-image.css);
 @import url(../blocks/content/elements/__element/-text/__element-text.css);
-@import url(../blocks/content/elements/__element/-text/_ellipsis/__element-text_ellipsis.css);
 @import url(../blocks/content/elements/__element/-rectangle/__element-rectangle.css);
 @import url(../blocks/content/elements/__element/-button/__element-button.css);
 @import url(../blocks/footer/footer.css);
