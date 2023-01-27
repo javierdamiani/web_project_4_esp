@@ -51,8 +51,13 @@ function cardGenerator(card) {
   const cardItem = templateCard.content.cloneNode(true);
   const cardLink = cardItem.querySelector(".elements__element-image");
   const trashCan = cardItem.querySelector("#trashCan");
+  const likeBtn = cardItem.querySelector("#likeBtn");
   cardItem.querySelector("#cardImg").src = card.link;
   cardItem.querySelector("#cardTitle").textContent = card.name;
+  likeBtn.addEventListener("click", function () {
+    likeBtn.classList.toggle("elements__element-button_active");
+    console.log("funciona");
+  });
   trashCan.addEventListener("click", function () {
     const cardItem = trashCan.closest(".elements__element");
     cardItem.remove();
