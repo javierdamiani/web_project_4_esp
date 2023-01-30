@@ -40,3 +40,5 @@
 @import url(../blocks/popup/__img/_container/-form/-toggle/-form-toggle.css);
 @import url(../blocks/popup/__img/_container/-form/-toggle/_close/-toggle_close.css);
 @import url(../blocks/popup/__img/_container/-form/-img/-form-img.css);
+@import url(../blocks/popup/__img/__opened/__opened.css);
+@import url(../blocks/popup/__img/_container/-form/-title/-title.css);

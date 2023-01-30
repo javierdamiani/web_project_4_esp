@@ -58,6 +58,7 @@
                 id="trashCan"
               />
               <img
+                src="./images/like_button.svg"
                 alt="Botón de corazón para dar like"
                 class="elements__element-button"
                 id="likeBtn"
@@ -182,7 +183,7 @@
 
     <!-- popUp para agrandar la imagen-->
 
-    <form class="popup__img" id="popUpAdd">
+    <form class="popup__img" id="modalPopUp">
       <fieldset class="popup__img_container">
         <div class="popup__img_container-form">
           <div class="popup__img_container-form-toggle">
@@ -190,10 +191,16 @@
               src="./images/close_icon.svg"
               alt="Equis para cerrar el formulario"
               class="popup__img_container-form-toggle_close"
-              id="closeAddBtn"
+              id="closeImgBtn"
             />
           </div>
-          <div class="popup__img_container-form-img"></div>
+          <img
+            src=""
+            alt=""
+            class="popup__img_container-form-img"
+            id="cardPopUp"
+          />
+          <p class="popup__img_container-form-title" id="popUpImgTitle"></p>
         </div>
       </fieldset>
     </form>

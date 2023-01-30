@@ -46,17 +46,34 @@ const initialCards = [
 ];
 
 const cardContainer = document.querySelector(".elements");
+const popUpModalCard = document.querySelector("#modalPopUp");
+const popUpImg = document.querySelector("#cardPopUp");
+const closeImgPopUp = document.querySelector("#closeImgBtn");
+const popUpImgTitle = document.querySelector("#popUpImgTitle");
+
+function openModalCard() {
+  popUpModalCard.classList.add("popup__img_opened");
+}
+function closeModalCard() {
+  popUpModalCard.classList.remove("popup__img_opened");
+}
 
 function cardGenerator(card) {
   const cardItem = templateCard.content.cloneNode(true);
   const cardLink = cardItem.querySelector(".elements__element-image");
   const trashCan = cardItem.querySelector("#trashCan");
   const likeBtn = cardItem.querySelector("#likeBtn");
+  const cardTitle = cardItem.querySelector("#cardTitle");
   cardItem.querySelector("#cardImg").src = card.link;
   cardItem.querySelector("#cardTitle").textContent = card.name;
+  cardLink.addEventListener("click", function () {
+    openModalCard();
+    popUpImg.src = card.link;
+    popUpImgTitle.textContent = cardTitle.textContent;
+    console.log("Funciona");
+  });
   likeBtn.addEventListener("click", function () {
     likeBtn.classList.toggle("elements__element-button_active");
-    console.log("funciona");
   });
   trashCan.addEventListener("click", function () {
     const cardItem = trashCan.closest(".elements__element");
@@ -103,11 +120,10 @@ function closeAddPopUp() {
   popUpAdd.classList.remove("popup__opened");
 }
 
-//Función para agregar nuevas tarjetas
-
 editBtn.addEventListener("click", openPopUp);
 closePopUpBtn.addEventListener("click", closePopUp);
 buttonSubmit.addEventListener("click", handleProfileFormSubmit);
 addBtn.addEventListener("click", openAddPopUp);
 closePopUpAdd.addEventListener("click", closeAddPopUp);
 addSubmit.addEventListener("click", handleAddFormSubmit);
+closeImgPopUp.addEventListener("click", closeModalCard);
