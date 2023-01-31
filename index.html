@@ -33,13 +33,14 @@
               src="./images/edit-button.svg"
               alt="Botón para editar el contenido del perfil"
               class="profile__info-edit_button"
+              id="editButton"
             />
             <div class="profile__info-text">
-              <p class="profile__info-explorer">Explorador</p>
-              <p class="profile__info-name">Jacques Cousteau</p>
+              <p class="profile__info-explorer" id="profAbout">Explorador</p>
+              <p class="profile__info-name" id="profName">Jacques Cousteau</p>
             </div>
           </div>
-          <button class="profile__add_button">
+          <button class="profile__add_button" id="addImg">
             <img
               src="./images/vector_plus.svg"
               alt="Imagen de un más para agregar contenido"
@@ -48,119 +49,29 @@
           </button>
         </div>
         <div class="elements">
-          <div class="elements__element">
-            <img
-              src="./images/like_button.svg"
-              alt="Botón de like"
-              class="elements__element-button"
-            />
-            <img
-              src="./images/image1.png"
-              alt=""
-              class="elements__element-image"
-            />
-            <p class="elements__element-text">Valle de Yosemite</p>
-            <img
-              src="./images/Rectangle.png"
-              alt="Rectángulo blanco que separa cada tarjeta"
-              class="elements__element-rectangle"
-            />
-          </div>
-
-          <div class="elements__element">
-            <img
-              src="./images/like_button.svg"
-              alt="Botón de like"
-              class="elements__element-button"
-            />
-            <img
-              src="./images/image2.png"
-              alt=""
-              class="elements__element-image"
-            />
-            <p class="elements__element-text">Lago Louise</p>
-            <img
-              src="./images/Rectangle.png"
-              alt="Rectángulo blanco que separa cada tarjeta"
-              class="elements__element-rectangle"
-            />
-          </div>
-
-          <div class="elements__element">
-            <img
-              src="./images/like_button.svg"
-              alt="Botón de like"
-              class="elements__element-button"
-            />
-            <img
-              src="./images/image3.png"
-              alt=""
-              class="elements__element-image"
-            />
-            <p class="elements__element-text">Montañas Calvas</p>
-            <img
-              src="./images/Rectangle.png"
-              alt="Rectángulo blanco que separa cada tarjeta"
-              class="elements__element-rectangle"
-            />
-          </div>
-
-          <div class="elements__element">
-            <img
-              src="./images/like_button.svg"
-              alt="Botón de like"
-              class="elements__element-button"
-            />
-            <img
-              src="./images/image4.png"
-              alt=""
-              class="elements__element-image"
-            />
-            <p class="elements__element-text">Latemar</p>
-            <img
-              src="./images/Rectangle.png"
-              alt="Rectángulo blanco que separa cada tarjeta"
-              class="elements__element-rectangle"
-            />
-          </div>
-
-          <div class="elements__element">
-            <img
-              src="./images/like_button.svg"
-              alt="Botón de like"
-              class="elements__element-button"
-            />
-            <img
-              src="./images/image5.png"
-              alt=""
-              class="elements__element-image"
-            />
-            <p class="elements__element-text_ellipsis">Vanoise Nationa...</p>
-            <img
-              src="./images/Rectangle.png"
-              alt="Rectángulo blanco que separa cada tarjeta"
-              class="elements__element-rectangle"
-            />
-          </div>
-
-          <div class="elements__element">
-            <img
-              src="./images/like_button.svg"
-              alt="Botón de like"
-              class="elements__element-button"
-            />
-            <img
-              src="./images/image6.png"
-              alt=""
-              class="elements__element-image"
-            />
-            <p class="elements__element-text">Lago di Braies</p>
-            <img
-              src="./images/Rectangle.png"
-              alt="Rectángulo blanco que separa cada tarjeta"
-              class="elements__element-rectangle"
-            />
-          </div>
+          <template class="card__template" id="cardTemplate">
+            <div class="elements__element">
+              <img
+                src="./images/trashCan.svg"
+                alt=""
+                class="elements__element-trash"
+                id="trashCan"
+              />
+              <img
+                src="./images/like_button.svg"
+                alt="Botón de corazón para dar like"
+                class="elements__element-button"
+                id="likeBtn"
+              />
+              <img src="" alt="" class="elements__element-image" id="cardImg" />
+              <p class="elements__element-text" id="cardTitle"></p>
+              <img
+                src="./images/Rectangle.png"
+                alt=""
+                class="elements__element-rectangle"
+              />
+            </div>
+          </template>
         </div>
       </main>
       <footer class="footer">
@@ -173,7 +84,7 @@
         para el BEM: bloque__elemento-elementoNombre2_modificador
     -->
 
-    <form class="popup">
+    <form class="popup" id="popUpProfile">
       <fieldset class="popup__container">
         <div class="popup__container-form">
           <div class="popup__container-form-toggle">
@@ -181,14 +92,15 @@
               src="./images/close_icon.svg"
               alt="Equis para cerrar el formulario"
               class="popup__container-form-toggle_close"
+              id="closeBtn"
             />
           </div>
-          <!-- <div class="popup__container-form-content"> -->
           <h2 class="popup__container-form-heading">Edit profile</h2>
           <div class="popup__container-form-inputs">
             <input
               type="text"
               class="popup__container-form-inputs_name"
+              id="popupName"
               placeholder="Nombre"
               value="Nombre"
             />
@@ -200,6 +112,7 @@
             <input
               type="text"
               class="popup__container-form-inputs_about"
+              id="popupAbout"
               placeholder="Acerca de mí"
             />
             <img
@@ -207,14 +120,88 @@
               alt="Línea que divide los inputs"
               class="popup__container-form-inputs_line"
             />
-            <button type="submit" class="popup__container-form-inputs_button">
+            <button
+              type="submit"
+              class="popup__container-form-inputs_button"
+              id="btnSubmit"
+            >
               Guardar
             </button>
           </div>
-          <!-- </div> -->
         </div>
       </fieldset>
     </form>
+
+    <!-- popUp para añadir una nueva tarjeta-->
+
+    <form class="popup" id="popUpAdd">
+      <fieldset class="popup__container">
+        <div class="popup__container-form">
+          <div class="popup__container-form-toggle">
+            <img
+              src="./images/close_icon.svg"
+              alt="Equis para cerrar el formulario"
+              class="popup__container-form-toggle_close"
+              id="closeAddBtn"
+            />
+          </div>
+          <h2 class="popup__container-form-heading">Nuevo lugar</h2>
+          <div class="popup__container-form-inputs">
+            <input
+              type="text"
+              class="popup__container-form-inputs_name"
+              id="title"
+              placeholder="Título"
+            />
+            <img
+              src="./images/line.svg"
+              alt="Línea que divide los inputs"
+              class="popup__container-form-inputs_line"
+            />
+            <input
+              type="text"
+              class="popup__container-form-inputs_about"
+              id="linkImg"
+              placeholder="Enlace a la imagen"
+            />
+            <img
+              src="./images/line.svg"
+              alt="Línea que divide los inputs"
+              class="popup__container-form-inputs_line"
+            />
+            <button
+              type="submit"
+              class="popup__container-form-inputs_button"
+              id="btnCreate"
+            >
+              Crear
+            </button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+
+    <!-- popUp para agrandar la imagen-->
+
+    <div class="popup__img" id="modalPopUp">
+      <div class="popup__img_container">
+        <div class="popup__img_container-form">
+          <img
+            src=""
+            alt=""
+            class="popup__img_container-form-img"
+            id="cardPopUp"
+          />
+          <img
+            src="./images/close_icon.svg"
+            alt="Equis para cerrar el formulario"
+            class="popup__img_container-form-toggle_close"
+            id="closeImgBtn"
+          />
+          <p class="popup__img_container-form-title" id="popUpImgTitle"></p>
+        </div>
+      </div>
+    </div>
 
     <script src="./script.js"></script>
   </body>

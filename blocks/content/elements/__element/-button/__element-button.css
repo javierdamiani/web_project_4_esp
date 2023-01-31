@@ -1,8 +1,13 @@
 .elements__element-button {
-  color: black;
+  border-color: transparent;
+  background-position: center;
+  box-sizing: content-box;
+  background-repeat: no-repeat;
+  height: 19px;
+  width: 21px;
   position: absolute;
   bottom: 30px;
-  z-index: 2;
+  z-index: 3;
   right: 18px;
 }
 .elements__element-button:hover {

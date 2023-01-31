@@ -1,5 +1,10 @@
 .popup__img_container-form-toggle_close {
   position: absolute;
   z-index: 5;
-  right: -451px;
+  top: 40px;
+}
+.popup__img_container-form-toggle_close:hover {
+  opacity: 0.4;
+  transition: opacity 0.5s linear;
+  cursor: pointer;
 }
