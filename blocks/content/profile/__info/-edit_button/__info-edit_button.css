@@ -1,10 +1,10 @@
-.profile__info-edit_button:hover {
+.profile__info-button:hover {
   opacity: 0.4;
   transition: opacity 0.5s linear;
   cursor: pointer;
 }
 @media screen and (max-width: 320px) {
-  .profile__info-edit_button {
+  .profile__info-button {
     max-width: 18px;
     max-height: 18px;
   }
