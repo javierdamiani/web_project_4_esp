@@ -1,6 +1,4 @@
 .popup__img_container-form-img {
-  max-width: 75vh;
+  max-width: 75vw;
   max-height: 75vh;
-  height: 100%;
-  width: 100%;
 }
