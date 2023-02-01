@@ -40,11 +40,10 @@
               <p class="profile__info-name" id="profName">Jacques Cousteau</p>
             </div>
           </div>
-          <button class="profile__add_button" id="addImg">
+          <button class="profile__add" id="addImg">
             <img
               src="./images/vector_plus.svg"
               alt="Imagen de un más para agregar contenido"
-              class="profile__add_button-plus"
             />
           </button>
         </div>
@@ -63,7 +62,12 @@
                 class="elements__element-button"
                 id="likeBtn"
               />
-              <img src="" alt="" class="elements__element-image" id="cardImg" />
+              <img
+                src="#"
+                alt=""
+                class="elements__element-image"
+                id="cardImg"
+              />
               <p class="elements__element-text" id="cardTitle"></p>
               <img
                 src="./images/Rectangle.png"
@@ -87,19 +91,17 @@
     <form class="popup" id="popUpProfile">
       <fieldset class="popup__container">
         <div class="popup__container-form">
-          <div class="popup__container-form-toggle">
-            <img
-              src="./images/close_icon.svg"
-              alt="Equis para cerrar el formulario"
-              class="popup__container-form-toggle_close"
-              id="closeBtn"
-            />
-          </div>
+          <img
+            src="./images/close_icon.svg"
+            alt="Equis para cerrar el formulario"
+            class="popup__container-form-toggle"
+            id="closeBtn"
+          />
           <h2 class="popup__container-form-heading">Edit profile</h2>
           <div class="popup__container-form-inputs">
             <input
               type="text"
-              class="popup__container-form-inputs_name"
+              class="popup__container-form-inputs-name"
               id="popupName"
               placeholder="Nombre"
               value="Nombre"
@@ -107,22 +109,22 @@
             <img
               src="./images/line.svg"
               alt="Línea que divide los inputs"
-              class="popup__container-form-inputs_line"
+              class="popup__container-form-inputs-line"
             />
             <input
               type="text"
-              class="popup__container-form-inputs_about"
+              class="popup__container-form-inputs-about"
               id="popupAbout"
               placeholder="Acerca de mí"
             />
             <img
               src="./images/line.svg"
               alt="Línea que divide los inputs"
-              class="popup__container-form-inputs_line"
+              class="popup__container-form-inputs-line"
             />
             <button
               type="submit"
-              class="popup__container-form-inputs_button"
+              class="popup__container-form-inputs-button"
               id="btnSubmit"
             >
               Guardar
@@ -137,41 +139,39 @@
     <form class="popup" id="popUpAdd">
       <fieldset class="popup__container">
         <div class="popup__container-form">
-          <div class="popup__container-form-toggle">
-            <img
-              src="./images/close_icon.svg"
-              alt="Equis para cerrar el formulario"
-              class="popup__container-form-toggle_close"
-              id="closeAddBtn"
-            />
-          </div>
+          <img
+            src="./images/close_icon.svg"
+            alt="Equis para cerrar el formulario"
+            class="popup__container-form-toggle"
+            id="closeAddBtn"
+          />
           <h2 class="popup__container-form-heading">Nuevo lugar</h2>
           <div class="popup__container-form-inputs">
             <input
               type="text"
-              class="popup__container-form-inputs_name"
+              class="popup__container-form-inputs-name"
               id="title"
               placeholder="Título"
             />
             <img
               src="./images/line.svg"
               alt="Línea que divide los inputs"
-              class="popup__container-form-inputs_line"
+              class="popup__container-form-inputs-line"
             />
             <input
               type="text"
-              class="popup__container-form-inputs_about"
+              class="popup__container-form-inputs-about"
               id="linkImg"
               placeholder="Enlace a la imagen"
             />
             <img
               src="./images/line.svg"
               alt="Línea que divide los inputs"
-              class="popup__container-form-inputs_line"
+              class="popup__container-form-inputs-line"
             />
             <button
               type="submit"
-              class="popup__container-form-inputs_button"
+              class="popup__container-form-inputs-button"
               id="btnCreate"
             >
               Crear
@@ -182,23 +182,17 @@
     </form>
 
     <!-- popUp para agrandar la imagen-->
-
-    <div class="popup__img" id="modalPopUp">
-      <div class="popup__img_container">
-        <div class="popup__img_container-form">
-          <img
-            src=""
-            alt=""
-            class="popup__img_container-form-img"
-            id="cardPopUp"
-          />
+    <div class="popup popup_img" id="modalPopUp">
+      <div class="popup__img">
+        <div>
+          <img src="#" alt="" class="popup__img-background" id="cardPopUp" />
           <img
             src="./images/close_icon.svg"
             alt="Equis para cerrar el formulario"
-            class="popup__img_container-form-toggle_close"
+            class="popup__img-close"
             id="closeImgBtn"
           />
-          <p class="popup__img_container-form-title" id="popUpImgTitle"></p>
+          <p class="popup__img-title" id="popUpImgTitle"></p>
         </div>
       </div>
     </div>

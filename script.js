@@ -70,7 +70,6 @@ function cardGenerator(card) {
     openModalCard();
     popUpImg.src = card.link;
     popUpImgTitle.textContent = cardTitle.textContent;
-    console.log("Funciona");
   });
   likeBtn.addEventListener("click", function () {
     likeBtn.classList.toggle("elements__element-button_active");
