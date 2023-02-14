@@ -16,6 +16,7 @@ const newTitle = document.querySelector("#title");
 const newImg = document.querySelector("#linkImg");
 const addSubmit = document.querySelector("#btnCreate");
 const templateCard = document.querySelector("#cardTemplate");
+const allPopUps = document.querySelectorAll(".popup");
 
 //Variables para crear las tarjetas iniciales con JS
 const initialCards = [
@@ -119,6 +120,45 @@ function closeAddPopUp() {
   popUpAdd.classList.remove("popup__opened");
 }
 
+function keyHandlerEvent(evt) {
+  if (evt.key === "Escape") {
+    closeAddPopUp();
+    closeModalCard();
+    closePopUp();
+  }
+}
+
+popUpModalCard.addEventListener("click", (evt) => {
+  if (
+    evt.target.classList.contains("popup_img") ||
+    evt.target.classList.contains("popup") ||
+    evt.target.classList.contains("popup__close") ||
+    evt.target.classList.contains("popup__img")
+  ) {
+    closeModalCard();
+  }
+});
+
+popUp.addEventListener("click", (evt) => {
+  if (
+    evt.target.classList.contains("popup__container") ||
+    evt.target.classList.contains("popup") ||
+    evt.target.classList.contains("popup__close")
+  ) {
+    closePopUp();
+  }
+});
+
+popUpAdd.addEventListener("click", (evt) => {
+  if (
+    evt.target.classList.contains("popup__container") ||
+    evt.target.classList.contains("popup") ||
+    evt.target.classList.contains("popup__close")
+  ) {
+    closeAddPopUp();
+  }
+});
+
 editBtn.addEventListener("click", openPopUp);
 closePopUpBtn.addEventListener("click", closePopUp);
 buttonSubmit.addEventListener("click", handleProfileFormSubmit);
@@ -126,3 +166,4 @@ addBtn.addEventListener("click", openAddPopUp);
 closePopUpAdd.addEventListener("click", closeAddPopUp);
 addSubmit.addEventListener("click", handleAddFormSubmit);
 closeImgPopUp.addEventListener("click", closeModalCard);
+document.addEventListener("keydown", keyHandlerEvent);

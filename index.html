@@ -88,7 +88,7 @@
         para el BEM: bloque__elemento-elementoNombre2_modificador
     -->
 
-    <form class="popup" id="popUpProfile">
+    <div class="popup popup_type_profile" id="popUpProfile">
       <fieldset class="popup__container">
         <div class="popup__container-form">
           <img
@@ -98,30 +98,39 @@
             id="closeBtn"
           />
           <h2 class="popup__container-form-heading">Edit profile</h2>
-          <div class="popup__container-form-inputs">
+          <form class="popup__form popup__container-form-inputs" novalidate>
             <input
               type="text"
-              class="popup__container-form-inputs-name"
+              class="form__input popup__container-form-inputs-name"
               id="popupName"
               placeholder="Nombre"
               value="Nombre"
+              minlength="2"
+              maxlength="40"
+              required
             />
+
             <img
               src="./images/line.svg"
               alt="Línea que divide los inputs"
-              class="popup__container-form-inputs-line"
+              class="popup__container-form-inputs-line-padding"
             />
+            <p id="popupName-error" class="form-error"></p>
             <input
               type="text"
-              class="popup__container-form-inputs-about"
+              class="form__input popup__container-form-inputs-name"
               id="popupAbout"
               placeholder="Acerca de mí"
+              minlength="2"
+              maxlength="200"
+              required
             />
             <img
               src="./images/line.svg"
               alt="Línea que divide los inputs"
               class="popup__container-form-inputs-line"
             />
+            <p id="popupAbout-error" class="form-error"></p>
             <button
               type="submit"
               class="popup__container-form-inputs-button"
@@ -129,14 +138,14 @@
             >
               Guardar
             </button>
-          </div>
+          </form>
         </div>
       </fieldset>
-    </form>
+    </div>
 
     <!-- popUp para añadir una nueva tarjeta-->
 
-    <form class="popup" id="popUpAdd">
+    <div class="popup popup_type_card" id="popUpAdd">
       <fieldset class="popup__container">
         <div class="popup__container-form">
           <img
@@ -146,29 +155,35 @@
             id="closeAddBtn"
           />
           <h2 class="popup__container-form-heading">Nuevo lugar</h2>
-          <div class="popup__container-form-inputs">
+          <form class="popup__form popup__container-form-inputs">
             <input
               type="text"
-              class="popup__container-form-inputs-name"
+              class="form__input popup__container-form-inputs-name"
               id="title"
               placeholder="Título"
+              minlength="2"
+              maxlength="30"
+              required
             />
             <img
               src="./images/line.svg"
               alt="Línea que divide los inputs"
               class="popup__container-form-inputs-line"
             />
+            <p id="title-error" class="form-error"></p>
             <input
-              type="text"
-              class="popup__container-form-inputs-about"
+              type="url"
+              class="form__input popup__container-form-inputs-about"
               id="linkImg"
               placeholder="Enlace a la imagen"
+              required
             />
             <img
               src="./images/line.svg"
               alt="Línea que divide los inputs"
               class="popup__container-form-inputs-line"
             />
+            <p id="linkImg-error" class="form-error"></p>
             <button
               type="submit"
               class="popup__container-form-inputs-button"
@@ -176,10 +191,10 @@
             >
               Crear
             </button>
-          </div>
+          </form>
         </div>
       </fieldset>
-    </form>
+    </div>
 
     <!-- popUp para agrandar la imagen-->
     <div class="popup popup_img" id="modalPopUp">
@@ -197,6 +212,7 @@
       </div>
     </div>
 
+    <script src="./validation.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
