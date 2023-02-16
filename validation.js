@@ -15,7 +15,6 @@ const hideInputError = (formElement, inputElement, configuration) => {
 };
 
 const checkInputValidity = (formElement, inputElement, configuration) => {
-  console.log(inputElement, formElement);
   if (!inputElement.validity.valid) {
     showInputError(formElement, inputElement, configuration);
   } else {
@@ -30,7 +29,6 @@ const hasInvalidInput = (inputList) => {
 };
 
 const toggleButtonState = (inputList, buttonElement) => {
-  console.log(hasInvalidInput(inputList));
   if (hasInvalidInput(inputList)) {
     buttonElement.classList.add("button_inactive");
   } else {
@@ -54,7 +52,6 @@ const setEventListeners = (formElement, configuration) => {
       toggleButtonState(inputList, buttonElement, configuration);
     });
   });
-  console.log(inputList, formElement);
 };
 
 const enableValidation = (configuration) => {
@@ -76,7 +73,7 @@ const enableValidation = (configuration) => {
 
 enableValidation({
   formSelector: ".popup__form",
-  inputSelector: ".form__input",
+  inputSelector: ".popup__container-form-inputs-name",
   submitButtonSelector: ".popup__container-form-inputs-button",
   inactiveButtonClass: "popup__button_disabled",
   inputErrorClass: "popup__input_type_error",

@@ -61,7 +61,7 @@ function closeModalCard() {
 
 function cardGenerator(card) {
   const cardItem = templateCard.content.cloneNode(true);
-  const cardLink = cardItem.querySelector(".elements__element-image");
+  const cardLink = cardItem.querySelector("#cardImg");
   const trashCan = cardItem.querySelector("#trashCan");
   const likeBtn = cardItem.querySelector("#likeBtn");
   const cardTitle = cardItem.querySelector("#cardTitle");
@@ -76,7 +76,7 @@ function cardGenerator(card) {
     likeBtn.classList.toggle("elements__element-button_active");
   });
   trashCan.addEventListener("click", function () {
-    const cardItem = trashCan.closest(".elements__element");
+    const cardItem = trashCan.closest(".elements__template_element");
     cardItem.remove();
   });
   return cardItem;
