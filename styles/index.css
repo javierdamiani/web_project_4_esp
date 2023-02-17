@@ -33,16 +33,7 @@
 @import url(../blocks/elements/__template/__element/-text/elements__template_element-text.css);
 @import url(../blocks/elements/__template/__element/-rectangle/elements__template_element-rectangle.css);
 @import url(../blocks/elements/__template/__element/-button/elements__template_element-button.css);
-@import url(../blocks/elements/__template/__element/-button/__element-button_active.css);
-/* 
-@import url(../blocks/content/elements/elements.css);
-@import url(../blocks/content/elements/__element/element.css);
-@import url(../blocks/content/elements/__element/-trash/__element-trash.css);
-@import url(../blocks/content/elements/__element/-image/__element-image.css);
-@import url(../blocks/content/elements/__element/-text/__element-text.css);
-@import url(../blocks/content/elements/__element/-rectangle/__element-rectangle.css);
-
-@import url(../blocks/content/elements/__element/-button/__element-button.css); */
+@import url(../blocks/elements/__template/__element/-button/elements__template_element-button_active.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/__copyright.css);
 @import url(../blocks/popup/__img/popup_img.css);

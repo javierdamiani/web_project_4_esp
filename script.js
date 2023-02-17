@@ -67,13 +67,14 @@ function cardGenerator(card) {
   const cardTitle = cardItem.querySelector("#cardTitle");
   cardItem.querySelector("#cardImg").src = card.link;
   cardItem.querySelector("#cardTitle").textContent = card.name;
+  cardItem.querySelector("#cardImg").alt = card.name;
   cardLink.addEventListener("click", function () {
     openModalCard();
     popUpImg.src = card.link;
     popUpImgTitle.textContent = cardTitle.textContent;
   });
   likeBtn.addEventListener("click", function () {
-    likeBtn.classList.toggle("elements__element-button_active");
+    likeBtn.classList.toggle("elements__template_element-button_active");
   });
   trashCan.addEventListener("click", function () {
     const cardItem = trashCan.closest(".elements__template_element");
@@ -126,6 +127,11 @@ function keyHandlerEvent(evt) {
     closeModalCard();
     closePopUp();
   }
+  removeKeyHandlerEvent();
+}
+
+function removeKeyHandlerEvent() {
+  document.removeEventListener("keydown", keyHandlerEvent, true);
 }
 
 popUpModalCard.addEventListener("click", (evt) => {
