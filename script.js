@@ -1,3 +1,6 @@
+import { Card } from "./Card.js";
+import { initialCards } from "./initialCards.js";
+
 const editBtn = document.querySelector("#editButton");
 const popUp = document.querySelector("#popUpProfile");
 const closePopUpBtn = document.querySelector("#closeBtn");
@@ -15,85 +18,34 @@ const closePopUpAdd = document.querySelector("#closeAddBtn");
 const newTitle = document.querySelector("#title");
 const newImg = document.querySelector("#linkImg");
 const addSubmit = document.querySelector("#btnCreate");
-const templateCard = document.querySelector("#cardTemplate");
+// const templateCard = document.querySelector("#cardTemplate");
 const allPopUps = document.querySelectorAll(".popup");
-
-//Variables para crear las tarjetas iniciales con JS
-const initialCards = [
-  {
-    name: "Valle de Yosemite",
-    link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
-  },
-  {
-    name: "Lago Louise",
-    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg",
-  },
-  {
-    name: "Montañas Calvas",
-    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg",
-  },
-  {
-    name: "Latemar",
-    link: "https://code.s3.yandex.net/web-code/latemar.jpg",
-  },
-  {
-    name: "Parque Nacional de la Vanoise",
-    link: "https://code.s3.yandex.net/web-code/vanoise.jpg",
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://code.s3.yandex.net/web-code/lago.jpg",
-  },
-];
-
 const cardContainer = document.querySelector(".elements");
+
+// const cardContainer = document.querySelector(".elements");
 const popUpModalCard = document.querySelector("#modalPopUp");
 const popUpImg = document.querySelector("#cardPopUp");
 const closeImgPopUp = document.querySelector("#closeImgBtn");
 const popUpImgTitle = document.querySelector("#popUpImgTitle");
 
-function openModalCard() {
+export function openModalCard() {
   popUpModalCard.classList.add("popup__img_opened");
 }
 function closeModalCard() {
   popUpModalCard.classList.remove("popup__img_opened");
 }
 
-function cardGenerator(card) {
-  const cardItem = templateCard.content.cloneNode(true);
-  const cardLink = cardItem.querySelector("#cardImg");
-  const trashCan = cardItem.querySelector("#trashCan");
-  const likeBtn = cardItem.querySelector("#likeBtn");
-  const cardTitle = cardItem.querySelector("#cardTitle");
-  cardItem.querySelector("#cardImg").src = card.link;
-  cardItem.querySelector("#cardTitle").textContent = card.name;
-  cardItem.querySelector("#cardImg").alt = card.name;
-  cardLink.addEventListener("click", function () {
-    openModalCard();
-    popUpImg.src = card.link;
-    popUpImgTitle.textContent = cardTitle.textContent;
-  });
-  likeBtn.addEventListener("click", function () {
-    likeBtn.classList.toggle("elements__template_element-button_active");
-  });
-  trashCan.addEventListener("click", function () {
-    const cardItem = trashCan.closest(".elements__template_element");
-    cardItem.remove();
-  });
-  return cardItem;
-}
-
 initialCards.forEach(function (element) {
-  const cardElement = cardGenerator(element);
-  cardContainer.append(cardElement);
+const cardElement = new Card(element).generateCard();
+cardContainer.append(cardElement);
 });
 
 function handleAddFormSubmit(evt, link, name) {
   evt.preventDefault();
-  const createdCard = cardGenerator({
+  const createdCard = new Card({
     link: newImg.value,
     name: newTitle.value,
-  });
+  }).generateCard();
   cardContainer.prepend(createdCard);
   closeAddPopUp();
 }

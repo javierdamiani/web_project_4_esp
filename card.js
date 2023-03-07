@@ -1,62 +1,61 @@
-const templateCard = document
-  .querySelector("#cardTemplate")
-  .cloneNode(true).content;
-//cardItem = templateCard
-const popUpModalCard = document.querySelector("#modalPopUp");
+import { openModalCard } from "./script.js";
+
+const template = document.querySelector("#cardTemplate");
 const popUpImg = document.querySelector("#cardPopUp");
 const popUpImgTitle = document.querySelector("#popUpImgTitle");
 
-class Card {
-  constructor(name, link) {
-    this._name = name;
-    this._src = link;
-  }
+export class Card {
+    constructor(data){
+        this._name = data.name;
+        this._link = data.link;
+    }
 
-  getTemplate() {
-    const cardItem = templateCard.querySelector("#cities");
-    return cardItem;
-  }
+    getTemplate(){
+        const templateCard = template.cloneNode(true).content.querySelector("#cities");
+        return templateCard
+    }
 
-  _handleLikeBtn() {
-    this.likeBtn.classList.toggle("elements__template_element-button_active");
-  }
-  _handleTrashCan() {
-    this._cityCard.remove();
-  }
-  _openModalCard() {
-    popUpModalCard.classList.add("popup__img_opened");
-  }
-  _closeModalCard() {
-    popUpModalCard.classList.remove("popup__img_opened");
-  }
+    handleLikeBtn(){
+        this.likeBtn.classList.toggle("elements__template_element-button_active");
+    }
 
-  setCardValues() {
-    this._cardLink = this._cityCard.querySelector("#cardImg");
-    this._cardTitle = this._cityCard.querySelector("#cardTitle");
-    this._trashCan = this._cityCard.querySelector("#trashCan");
-    this._likeBtn = this._cityCard.querySelector("#likeBtn");
-    this._cardTitle.textContent = this._name;
-    this._cardLink = this._src;
-  }
+    handleDeleteBtn(){
+        this.createdCard.remove();
+    }
 
-  setEventListeners() {
-    this._likeBtn.addEventListener("click", () => {
-      this._handleLikeBtn();
-    });
-    this._trashCan.addEventListener("click", () => {
-      this._handleTrashCan();
-    });
-    this._cardLink.addEventListener("click", () => {
-      openModalCard();
-      popUpImg.src = card.link;
-      popUpImgTitle.textContent = cardTitle.textContent;
-    });
-  }
+    handleOpenModalCard(){
+        openModalCard();
+        popUpImg.src = this._link;
+        popUpImgTitle.textContent = this.cardTitle.textContent;
+    }
 
-  _createCard() {
-    this.generatedCard = this.getTemplate();
-    this.setCardValues();
-    this.setEventListeners();
-    return this._cityCard;
-  }
+    setEventListeners(){
+        this.likeBtn.addEventListener("click",() => {
+            this.handleLikeBtn()
+        } )
+        this.deleteBtn.addEventListener("click", () => {
+            this.handleDeleteBtn()
+        })
+        this.cardImage.addEventListener("click", () => {
+            this.handleOpenModalCard()
+        })
+    }
+
+    setCardProperties(){
+        this.cardTitle = this.createdCard.querySelector("#cardTitle");
+        this.cardImage = this.createdCard.querySelector("#cardImg");
+        this.deleteBtn = this.createdCard.querySelector("#trashCan");
+        this.likeBtn = this.createdCard.querySelector("#likeBtn");
+        this.cardTitle.textContent = this._name;
+        this.cardImage.src = this._link;
+    }
+
+    generateCard(){
+        this.createdCard = this.getTemplate();
+        this.setCardProperties();
+        this.setEventListeners();
+        return this.createdCard
+    }
 }
+
+
