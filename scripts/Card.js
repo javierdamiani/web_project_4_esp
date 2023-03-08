@@ -1,6 +1,4 @@
-import { openModalCard } from "./scripts/utils.js";
-
-//Poner los nombres en MAYUS
+import { openModalCard } from "./utils.js";
 
 const template = document.querySelector("#cardTemplate");
 const popUpImg = document.querySelector("#cardPopUp");

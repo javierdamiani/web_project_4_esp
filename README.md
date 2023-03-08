@@ -1,8 +1,27 @@
-# Proyecto 6: Alrededor de los Estados Unidos
+# Proyecto 7: Alrededor de los Estados Unidos
 
 By. Javier Damiani
 
-El proyecto 4 consistió en hacer una página web que presente imágenes y el perfil de un explorador. También debe aparecer un popUp para editar la información del explorador. Para el desarrollo de este proyecto se utilizó la tecnología HTML, CSS y JavaScript. Siendo HTML y CSS para la maquetación de la web y JavaScript para la interacción entre el usuario y la web.
+Introducción:
 
-Se continuó con la base del proyecto anterior, se agregaron funcionalidades a la página tales como poder añadir tarjetas, borrar tarjetas, darles like, así como el poder agrandar las imágenes de las tarjetas.
+El presente proyecto consistió en desarrollar una página web con un formato de tarjetas, en el cual el usuario es capaz de editar el nombre así como la ocupación del perfil. Asimismo, puede añadir tarjetas a través del botón con el símbolo "+". 
+
+La página web es responsive pues se adapta a diferentes tipos de pantallas.
+
+Tecnologías utilizadas: 
+
+HTML5
+CSS
+JavaScript
+Figma
+
+Se utilizó la tecnología HTML y CSS para la maquetación de la página web, basándonos en lo propuesto por el proyecto a través de Figma. Se hizo uso de JavaScript para poder darle interacción al usuario con la Web. 
+
+Actualización del proyecto al 03/08/2023 (8 de Marzo del 2023):
+
+Se organizaron los archivos JavaScript en la carpeta "scripts". Se utilizó la metodología de la programación orientada a objetos para así reestructurar el código, que quede más ordenado y que sea más amigable su lectura. Se crearon los archivos Card.js y FormValidator.js que son la clase creadora de tarjetas y la clase que realiza la validación de formularios respectivamente.
+Por último se creó el arhivo utils.js en donde se almacenan los controladores de eventos (Event Listeners) y las funciones que abren y cierran el modal de las tarjetas. 
+
 El link para visitar la Web es el siguiente: https://javierdamiani.github.io/web_project_4_esp.github.io/
+El link al repositorio de gitHub es:  https://github.com/javierdamiani/web_project_4_esp
+
