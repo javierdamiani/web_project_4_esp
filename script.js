@@ -1,5 +1,6 @@
 import { Card } from "./Card.js";
 import { initialCards } from "./initialCards.js";
+import { openModalCard } from "./scripts/utils.js";
 
 const editBtn = document.querySelector("#editButton");
 const popUp = document.querySelector("#popUpProfile");
@@ -28,9 +29,7 @@ const popUpImg = document.querySelector("#cardPopUp");
 const closeImgPopUp = document.querySelector("#closeImgBtn");
 const popUpImgTitle = document.querySelector("#popUpImgTitle");
 
-export function openModalCard() {
-  popUpModalCard.classList.add("popup__img_opened");
-}
+
 function closeModalCard() {
   popUpModalCard.classList.remove("popup__img_opened");
 }

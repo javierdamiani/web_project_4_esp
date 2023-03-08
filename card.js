@@ -1,4 +1,4 @@
-import { openModalCard } from "./script.js";
+import { openModalCard } from "./scripts/utils.js";
 
 //Poner los nombres en MAYUS
 

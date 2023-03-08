@@ -1,5 +1,5 @@
 
-class Validator{
+class FormValidator{
     constructor(settings, formElement){
         this.formSelector = settings.formSelector;
         this.inputSelector = settings.inputSelector;
@@ -41,9 +41,9 @@ class Validator{
 
     _toggleButtonState(inputList, buttonElement){
         if (this._hasInvalidInput(inputList)) {
-            buttonElement.classList.add(this.inactiveButtonClass);
+            buttonElement.classList.add("button_inactive");
           } else {
-            buttonElement.classList.remove(this.inactiveButtonClass);
+            buttonElement.classList.remove("button_inactive");
           }
     }
 
@@ -79,8 +79,8 @@ const settings = {
 const formElement = document.querySelector(".popup__form")
 const placeFormElement = document.querySelector("#placeForm")
 
-const addValidation = new Validator(settings, formElement)._enableValidation(); //Crear una instancia
-const addPlaceValidation = new Validator(settings, placeFormElement)._enableValidation();
+const addValidation = new FormValidator(settings, formElement)._enableValidation(); //Crear una instancia
+const addPlaceValidation = new FormValidator(settings, placeFormElement)._enableValidation();
 
 
 
