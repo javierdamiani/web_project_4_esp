@@ -10,38 +10,38 @@ export class Card {
         this._link = data.link;
     }
 
-    getTemplate(){
+    _getTemplate(){
         const templateCard = template.cloneNode(true).content.querySelector("#cities");
         return templateCard
     }
 
-    handleLikeBtn(){
+    _handleLikeBtn(){
         this.likeBtn.classList.toggle("elements__template_element-button_active");
     }
 
-    handleDeleteBtn(){
+    _handleDeleteBtn(){
         this.createdCard.remove();
     }
 
-    handleOpenModalCard(){
+    _handleOpenModalCard(){
         openModalCard();
         popUpImg.src = this._link;
         popUpImgTitle.textContent = this.cardTitle.textContent;
     }
 
-    setEventListeners(){
+    _setEventListeners(){
         this.likeBtn.addEventListener("click",() => {
-            this.handleLikeBtn()
+            this._handleLikeBtn()
         } )
         this.deleteBtn.addEventListener("click", () => {
-            this.handleDeleteBtn()
+            this._handleDeleteBtn()
         })
         this.cardImage.addEventListener("click", () => {
-            this.handleOpenModalCard()
+            this._handleOpenModalCard()
         })
     }
 
-    setCardProperties(){
+    _setCardProperties(){
         this.cardTitle = this.createdCard.querySelector("#cardTitle");
         this.cardImage = this.createdCard.querySelector("#cardImg");
         this.deleteBtn = this.createdCard.querySelector("#trashCan");
@@ -50,10 +50,10 @@ export class Card {
         this.cardImage.src = this._link;
     }
 
-    generateCard(){
-        this.createdCard = this.getTemplate();
-        this.setCardProperties();
-        this.setEventListeners();
+    _generateCard(){
+        this.createdCard = this._getTemplate();
+        this._setCardProperties();
+        this._setEventListeners();
         return this.createdCard
     }
 }

@@ -15,7 +15,7 @@ const newImg = document.querySelector("#linkImg");
 const cardContainer = document.querySelector(".elements");
 
 initialCards.forEach(function (element) {
-const cardElement = new Card(element).generateCard();
+const cardElement = new Card(element)._generateCard();
 cardContainer.append(cardElement);
 });
 
@@ -24,7 +24,7 @@ export function handleAddFormSubmit(evt, link, name) {
   const createdCard = new Card({
     link: newImg.value,
     name: newTitle.value,
-  }).generateCard();
+  })._generateCard();
   cardContainer.prepend(createdCard);
   closeAddPopUp();
 }

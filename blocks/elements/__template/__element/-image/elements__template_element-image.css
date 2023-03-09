@@ -8,3 +8,10 @@
   border-radius: 10px 10px 0px 0px;
   cursor: pointer;
 }
+
+@media screen  and (max-width: 400px) {
+  .elements__template_element-image{
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
