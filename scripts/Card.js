@@ -1,13 +1,11 @@
-import { openModalCard } from "./utils.js";
 
 const template = document.querySelector("#cardTemplate");
-const popUpImg = document.querySelector("#cardPopUp");
-const popUpImgTitle = document.querySelector("#popUpImgTitle");
 
 export class Card {
-    constructor(data){
+    constructor({data, handleCardClick}){
         this._name = data.name;
         this._link = data.link;
+        this._handleCardClick = handleCardClick;
     }
 
     _getTemplate(){
@@ -23,12 +21,6 @@ export class Card {
         this.createdCard.remove();
     }
 
-    _handleOpenModalCard(){
-        openModalCard();
-        popUpImg.src = this._link;
-        popUpImgTitle.textContent = this.cardTitle.textContent;
-    }
-
     _setEventListeners(){
         this.likeBtn.addEventListener("click",() => {
             this._handleLikeBtn()
@@ -37,8 +29,9 @@ export class Card {
             this._handleDeleteBtn()
         })
         this.cardImage.addEventListener("click", () => {
-            this._handleOpenModalCard()
+            this._handleCardClick({name: this._name, link: this._link})
         })
+        
     }
 
     _setCardProperties(){

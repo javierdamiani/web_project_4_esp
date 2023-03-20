@@ -1,67 +1,74 @@
 import { Card } from "./Card.js";
 import { initialCards } from "./initialCards.js";
-import { openModalCard } from "./utils.js";
-import { closeModalCard } from "./utils.js";
+import { 
+  editBtn, 
+  addBtn, 
+  profileTitle, 
+  profileProfession } from "./utils.js";
 
+import  Section  from "./Section.js"
+import PopUpWithForm from "./PopUpWithForm.js";
+import PopUpWithImage from "./PopUpWithImage.js";
+import UserInfo from "./UserInfo.js";
 
-const popUp = document.querySelector("#popUpProfile");
-const profileInfoName = document.querySelector("#profName");
-const profileInfoAbout = document.querySelector("#profAbout");
 const popupFormName = document.querySelector("#popupName");
 const popupFormAbout = document.querySelector("#popupAbout");
-const popUpAdd = document.querySelector("#popUpAdd");
 const newTitle = document.querySelector("#title");
 const newImg = document.querySelector("#linkImg");
-const cardContainer = document.querySelector(".elements");
 
-initialCards.forEach(function (element) {
-const cardElement = new Card(element)._generateCard();
-cardContainer.append(cardElement);
-});
+const modalCard = new PopUpWithImage("#modalPopUp");
+modalCard.setEventListeners()
 
-export function handleAddFormSubmit(evt, link, name) {
-  evt.preventDefault();
-  const createdCard = new Card({
+const createCard = (data) => {
+  const cardElement = new Card({data, 
+    handleCardClick: ({name, link}) => {
+    modalCard.open({name, link})
+  } });
+  return cardElement._generateCard();
+}
+
+const sectionCards = new Section({
+  data: initialCards,
+  renderer: (cardItem) => {
+    const cardElement = createCard(cardItem)
+    sectionCards.addCards(cardElement);
+  },
+}, ".elements")
+sectionCards.renderer();
+
+const handleAddFormSubmit = () => {
+  const cardElement = createCard({
     link: newImg.value,
     name: newTitle.value,
-  })._generateCard();
-  cardContainer.prepend(createdCard);
-  closeAddPopUp();
+   });
+   sectionCards.addItem(cardElement)
+  createCardPopUp.close();
 }
 
-export function openPopUp() {
-  popUp.classList.add("popup__opened");
-  popupFormName.value = profileInfoName.textContent;
-  popupFormAbout.value = profileInfoAbout.textContent;
-}
+const createCardPopUp = new PopUpWithForm("#popUpAdd", handleAddFormSubmit);
+createCardPopUp.setEventListeners();
 
-export function closePopUp() {
-  popUp.classList.remove("popup__opened");
-}
+addBtn.addEventListener("click", () => {
+  createCardPopUp.open()
+})
 
 export function handleProfileFormSubmit(evt) {
   evt.preventDefault();
-  profileInfoName.textContent = popupFormName.value;
-  profileInfoAbout.textContent = popupFormAbout.value;
-  closePopUp();
-}
-export function openAddPopUp() {
-  popUpAdd.classList.add("popup__opened");
+  profileTitle.textContent = popupFormName.value;
+  profileProfession.textContent = popupFormAbout.value;
+  editPopUp.close();
 }
 
-export function closeAddPopUp() {
-  popUpAdd.classList.remove("popup__opened");
-}
+//No toma los valores correctamente de la página web 
 
-export function keyHandlerEvent(evt) {
-  if (evt.key === "Escape") {
-    closeAddPopUp();
-    closeModalCard();
-    closePopUp();
-  }
-  removeKeyHandlerEvent();
-}
+const editPopUp = new PopUpWithForm("#popUpProfile", handleProfileFormSubmit);
+editPopUp.setEventListeners();
 
-function removeKeyHandlerEvent() {
-  document.removeEventListener("keydown", keyHandlerEvent, true);
-}
+editBtn.addEventListener("click", () => {
+  editPopUp.open();
+} )
+
+const profileUser = new UserInfo({
+  userName: profileTitle,
+  userJob: profileProfession,
+})
