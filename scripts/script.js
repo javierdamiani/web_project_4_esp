@@ -4,17 +4,15 @@ import {
   editBtn, 
   addBtn, 
   profileTitle, 
-  profileProfession } from "./utils.js";
-
+  profileProfession,
+  popupFormName,
+  popupFormAbout,
+  newTitle,
+  newImg } from "./utils.js";
 import  Section  from "./Section.js"
 import PopUpWithForm from "./PopUpWithForm.js";
 import PopUpWithImage from "./PopUpWithImage.js";
 import UserInfo from "./UserInfo.js";
-
-const popupFormName = document.querySelector("#popupName");
-const popupFormAbout = document.querySelector("#popupAbout");
-const newTitle = document.querySelector("#title");
-const newImg = document.querySelector("#linkImg");
 
 const modalCard = new PopUpWithImage("#modalPopUp");
 modalCard.setEventListeners()
@@ -52,23 +50,28 @@ addBtn.addEventListener("click", () => {
   createCardPopUp.open()
 })
 
-export function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
+function handleProfileFormSubmit(evt) {
   profileTitle.textContent = popupFormName.value;
   profileProfession.textContent = popupFormAbout.value;
   editPopUp.close();
 }
 
-//No toma los valores correctamente de la página web 
-
 const editPopUp = new PopUpWithForm("#popUpProfile", handleProfileFormSubmit);
 editPopUp.setEventListeners();
-
-editBtn.addEventListener("click", () => {
-  editPopUp.open();
-} )
 
 const profileUser = new UserInfo({
   userName: profileTitle,
   userJob: profileProfession,
 })
+
+editBtn.addEventListener("click", () => {
+  editPopUp.open();
+  const profileUserInfo = profileUser.getUserInfo();
+  popupFormName.value = profileUserInfo.userName;
+  popupFormAbout.value = profileUserInfo.userJob;
+} )
+
+
+
+
+
