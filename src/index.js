@@ -1,5 +1,6 @@
-import { Card } from "./Card.js";
-import { initialCards } from "./initialCards.js";
+import "./styles/index.css"
+import { Card } from "./scripts/Card.js"
+import { initialCards } from "./scripts/initialCards.js";
 import { 
   editBtn, 
   addBtn, 
@@ -8,11 +9,11 @@ import {
   popupFormName,
   popupFormAbout,
   newTitle,
-  newImg } from "./utils.js";
-import  Section  from "./Section.js"
-import PopUpWithForm from "./PopUpWithForm.js";
-import PopUpWithImage from "./PopUpWithImage.js";
-import UserInfo from "./UserInfo.js";
+  newImg } from "./scripts/utils.js";
+import  Section  from "./scripts/Section.js"
+import PopUpWithForm from "./scripts/PopUpWithForm.js";
+import PopUpWithImage from "./scripts/PopUpWithImage.js";
+import UserInfo from "./scripts/UserInfo.js";
 
 const modalCard = new PopUpWithImage("#modalPopUp");
 modalCard.setEventListeners()
