@@ -12,12 +12,12 @@
     <div class="page">
       <header class="header">
         <img
-          src="./images/header__logo.svg"
-          alt="Aroun the U.S."
+          src="<%=require('./images/header__logo.svg')%>"
+          alt="Around the U.S."
           class="header__logo"
         />
         <img
-          src="./images/header__line.svg"
+          src="<%=require('./images/header__line.svg')%>"
           alt="Linea que divide el header"
           class="header__line"
         />
@@ -25,13 +25,13 @@
       <main class="content">
         <div class="profile">
           <img
-            src="./images/profile__avatar.png"
+            src="<%=require('./images/profile__avatar.png')%>"
             alt="Imagen de una persona sonriente"
             class="profile__avatar"
           />
           <div class="profile__info">
             <img
-              src="./images/edit-button.svg"
+              src="<%=require('./images/edit-button.svg')%>"
               alt="Botón para editar el contenido del perfil"
               class="profile__info-button"
               id="editButton"
@@ -43,7 +43,7 @@
           </div>
           <button class="profile__add" id="addImg">
             <img
-              src="./images/vector_plus.svg"
+              src="<%=require('./images/vector_plus.svg')%>"
               alt="Imagen de un más para agregar contenido"
             />
           </button>
@@ -52,13 +52,13 @@
           <template class="elements__template" id="cardTemplate">
             <div class="elements__template_element" id="cities">
               <img
-                src="./images/trashCan.svg"
+                src="<%=require('./images/trashCan.svg')%>"
                 alt="Imagen de un contenedor de basura para eliminar la tarjeta"
                 class="elements__template_element-trash"
                 id="trashCan"
               />
               <img
-                src="./images/like_button.svg"
+                src="<%=require('./images/like_button.svg')%>"
                 alt="Botón de corazón para dar like"
                 class="elements__template_element-button"
                 id="likeBtn"
@@ -71,7 +71,7 @@
               />
               <p class="elements__template_element-text" id="cardTitle"></p>
               <img
-                src="./images/Rectangle.png"
+                src="<%=require('./images/Rectangle.png')%>"
                 alt="Recángulo blanco que contiene las imágenes de las tarjetas"
                 class="elements__template_element-rectangle"
               />
@@ -93,7 +93,7 @@
       <fieldset class="popup__container">
         <div class="popup__container-form">
           <img
-            src="./images/close_icon.svg"
+            src="<%=require('./images/close_icon.svg')%>"
             alt="Equis para cerrar el formulario"
             class="popup__container-form-toggle"
             id="closeBtn"
@@ -112,7 +112,7 @@
             />
 
             <img
-              src="./images/line.svg"
+              src="<%=require('./images/line.svg')%>"
               alt="Línea que divide los inputs"
               class="popup__container-form-inputs-line-padding"
             />
@@ -127,7 +127,7 @@
               required
             />
             <img
-              src="./images/line.svg"
+              src="<%=require('./images/line.svg')%>"
               alt="Línea que divide los inputs"
               class="popup__container-form-inputs-line"
             />
@@ -150,7 +150,7 @@
       <fieldset class="popup__container">
         <div class="popup__container-form">
           <img
-            src="./images/close_icon.svg"
+            src="<%=require('./images/close_icon.svg')%>"
             alt="Equis para cerrar el formulario"
             class="popup__container-form-toggle"
             id="closeAddBtn"
@@ -167,7 +167,7 @@
               required
             />
             <img
-              src="./images/line.svg"
+              src="<%=require('./images/line.svg')%>"
               alt="Línea que divide los inputs"
               class="popup__container-form-inputs-line"
             />
@@ -180,7 +180,7 @@
               required
             />
             <img
-              src="./images/line.svg"
+              src="<%=require('./images/line.svg')%>"
               alt="Línea que divide los inputs"
               class="popup__container-form-inputs-line"
             />
@@ -203,7 +203,7 @@
         <div>
           <img src="#" alt="" class="popup__img-background" id="cardPopUp" />
           <img
-            src="./images/close_icon.svg"
+            src="<%=require('./images/close_icon.svg')%>"
             alt="Equis para cerrar el formulario"
             class="popup__img-close"
             id="closeImgBtn"

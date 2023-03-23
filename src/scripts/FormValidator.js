@@ -1,5 +1,5 @@
 
-class FormValidator{
+export class FormValidator{
     constructor(settings, formElement){
         this.formSelector = settings.formSelector;
         this.inputSelector = settings.inputSelector;
@@ -76,11 +76,11 @@ const settings = {
     errorClass: "popup__error_visible",
   };
 
-const formElement = document.querySelector(".popup__form")
-const placeFormElement = document.querySelector("#placeForm")
+export const formElement = document.querySelector(".popup__form")
+export const placeFormElement = document.querySelector("#placeForm")
 
-const addValidation = new FormValidator(settings, formElement)._enableValidation(); //Crear una instancia
-const addPlaceValidation = new FormValidator(settings, placeFormElement)._enableValidation();
+export const addValidation = new FormValidator(settings, formElement)._enableValidation(); //Crear una instancia
+export const addPlaceValidation = new FormValidator(settings, placeFormElement)._enableValidation();
 
 
 
