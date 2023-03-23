@@ -2,6 +2,7 @@ import "./styles/index.css"
 import { Card } from "./scripts/Card.js"
 import { initialCards } from "./scripts/initialCards.js";
 import { 
+  selectors,
   editBtn, 
   addBtn, 
   profileTitle, 
@@ -9,11 +10,22 @@ import {
   popupFormName,
   popupFormAbout,
   newTitle,
-  newImg } from "./scripts/utils.js";
-import  Section  from "./scripts/Section.js"
+  newImg,
+  formElement,
+  placeFormElement,
+  } from "./scripts/utils.js";
+import FormValidator from "./scripts/FormValidator.js";
+import Section  from "./scripts/Section.js"
 import PopUpWithForm from "./scripts/PopUpWithForm.js";
 import PopUpWithImage from "./scripts/PopUpWithImage.js";
 import UserInfo from "./scripts/UserInfo.js";
+
+
+const profilePopUpValidator = new FormValidator(formElement, selectors)
+const addPlaceValidation = new FormValidator(placeFormElement, selectors)
+
+profilePopUpValidator.enableValidation();
+addPlaceValidation.enableValidation();
 
 const modalCard = new PopUpWithImage("#modalPopUp");
 modalCard.setEventListeners()
@@ -48,7 +60,8 @@ const createCardPopUp = new PopUpWithForm("#popUpAdd", handleAddFormSubmit);
 createCardPopUp.setEventListeners();
 
 addBtn.addEventListener("click", () => {
-  createCardPopUp.open()
+  createCardPopUp.open();
+  addPlaceValidation.resetValidation();
 })
 
 function handleProfileFormSubmit(evt) {
@@ -67,6 +80,7 @@ const profileUser = new UserInfo({
 
 editBtn.addEventListener("click", () => {
   editPopUp.open();
+  profilePopUpValidator.resetValidation();
   const profileUserInfo = profileUser.getUserInfo();
   popupFormName.value = profileUserInfo.userName;
   popupFormAbout.value = profileUserInfo.userJob;
