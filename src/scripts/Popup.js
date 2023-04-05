@@ -22,10 +22,9 @@ export default class Popup {
 
     _clickOutside(evt){
         return (
-            evt.target.classList.contains("popup__container") ||
             evt.target.classList.contains("popup") ||
             evt.target.classList.contains("popup__close") ||
-            evt.target.classList.contains("popup__container-form-toggle") ||
+            evt.target.classList.contains("popup__close-button") ||
             evt.target.classList.contains("popup__img-close") ||
             evt.target.classList.contains("popup__img")
           )

@@ -1,8 +1,0 @@
-.popup__container-form-inputs-line-padding {
-  padding-bottom: 20px;
-}
-@media screen and (max-width: 320px) {
-  .popup__container-form-inputs-line {
-    max-width: 238px;
-  }
-}

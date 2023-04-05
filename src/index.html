@@ -22,11 +22,16 @@
       </header>
       <main class="content">
         <div class="profile">
-          <img
+          <div class="profile__avatar-container">
+            <img
             src="<%=require('./images/profile__avatar.png')%>"
             alt="Imagen de una persona sonriente"
             class="profile__avatar"
           />
+          <div class="profile__avatar-overlay"></div>
+          </div>
+
+
           <div class="profile__info">
             <img
               src="<%=require('./images/edit-button.svg')%>"
@@ -55,12 +60,15 @@
                 class="elements__template_element-trash"
                 id="trashCan"
               />
+              <div>
               <img
                 src="<%=require('./images/like_button.svg')%>"
                 alt="Botón de corazón para dar like"
                 class="elements__template_element-button"
                 id="likeBtn"
               />
+              <p class="elements__template_element-counter" id="heartCounter">0</p>
+            </div>
               <img
                 src="#"
                 alt=""
@@ -82,120 +90,139 @@
       </footer>
     </div>
 
-    <!--Acá empiezan los popUps
-        
-        para el BEM: bloque__elemento-elementoNombre2_modificador
-    -->
+    <!--Acá empiezan los popUps-->
+
+    <!-- Edit profile -->
 
     <div class="popup popup_type_profile" id="popUpProfile">
-      <fieldset class="popup__container">
-        <div class="popup__container-form">
-          <img
-            src="<%=require('./images/close_icon.svg')%>"
-            alt="Equis para cerrar el formulario"
-            class="popup__container-form-toggle"
-            id="closeBtn"
-          />
-          <h2 class="popup__container-form-heading">Edit profile</h2>
-          <form class="popup__form popup__container-form-inputs" novalidate>
+      <div class="popup__container">
+        <button type="button" class="popup__close-button"></button>
+        <h3 class="popup__title">Edit profile</h3>
+        <form action="#" class="popup__form popup__form_type_edit" novalidate>
+          <label for="popup-input-name" class="popup__field">
             <input
               type="text"
-              class="popup__container-form-inputs-name"
-              id="popupName"
+              name="name"
               placeholder="Nombre"
               value="Nombre"
+              id="popupName"
               minlength="2"
               maxlength="40"
+              class="popup__input popup__input_type_name"
               required
             />
-
-            <img
-              src="<%=require('./images/line.svg')%>"
-              alt="Línea que divide los inputs"
-              class="popup__container-form-inputs-line-padding"
-            />
-            <p id="popupName-error" class="form-error"></p>
+            <span id="popupName-error" class="popup__error"></span>
+          </label>
+          <label for="popup-input-about" class="popup__field">
             <input
               type="text"
-              class="popup__container-form-inputs-name"
-              id="popupAbout"
-              placeholder="Acerca de mí"
+              name="about"
+              placeholder="Acerca de mi"
               minlength="2"
               maxlength="200"
+              id="popupAbout"
+              class="popup__input popup__input_type_about"
               required
             />
-            <img
-              src="<%=require('./images/line.svg')%>"
-              alt="Línea que divide los inputs"
-              class="popup__container-form-inputs-line"
-            />
-            <p id="popupAbout-error" class="form-error"></p>
-            <button
-              type="submit"
-              class="popup__container-form-inputs-button"
-              id="btnSubmit"
-            >
-              Guardar
-            </button>
-          </form>
-        </div>
-      </fieldset>
+            <p id="popupAbout-error" class="popup__error"></p>
+          </label>
+          <button
+            type="submit"
+            class="popup__button popup__button_type_edit"
+            aria-label="save button"
+            data-textcontent="Guardar"
+          >
+            Guardar
+          </button>
+        </form>
+      </div>
     </div>
 
-    <!-- popUp para añadir una nueva tarjeta-->
+    <!--PopUp para agregar cards-->
 
     <div class="popup popup_type_card" id="popUpAdd">
-      <fieldset class="popup__container">
-        <div class="popup__container-form">
-          <img
-            src="<%=require('./images/close_icon.svg')%>"
-            alt="Equis para cerrar el formulario"
-            class="popup__container-form-toggle"
-            id="closeAddBtn"
-          />
-          <h2 class="popup__container-form-heading">Nuevo lugar</h2>
-          <form class="popup__form popup__container-form-inputs" id="placeForm">
+      <div class="popup__container">
+        <button type="button" class="popup__close-button"></button>
+        <h3 class="popup__title">Nuevo lugar</h3>
+        <form
+          action="#"
+          name="place"
+          class="popup__form"
+          id="placeForm"
+          novalidate
+        >
+          <label for="popup-input-title" class="popup__field">
             <input
-              type="text"
-              class="popup__container-form-inputs-name"
               id="title"
+              name="title"
               placeholder="Título"
               minlength="2"
               maxlength="30"
+              type="text"
+              class="popup__input"
               required
             />
-            <img
-              src="<%=require('./images/line.svg')%>"
-              alt="Línea que divide los inputs"
-              class="popup__container-form-inputs-line"
-            />
-            <p id="title-error" class="form-error"></p>
+            <p id="title-error" class="popup__error"></p>
+          </label>
+          <label for="popup-input-link" class="popup__field">
             <input
               type="url"
-              class="popup__container-form-inputs-name"
+              name="image-link"
+              class="popup__input"
               id="linkImg"
               placeholder="Enlace a la imagen"
               required
             />
-            <img
-              src="<%=require('./images/line.svg')%>"
-              alt="Línea que divide los inputs"
-              class="popup__container-form-inputs-line"
-            />
-            <p id="linkImg-error" class="form-error"></p>
-            <button
-              type="submit"
-              class="popup__container-form-inputs-button"
-              id="btnCreate"
-            >
-              Crear
-            </button>
-          </form>
-        </div>
-      </fieldset>
+            <p id="linkImg-error" class="popup__error"></p>
+          </label>
+          <button
+            class="popup__button"
+            type="submit"
+            id="btnCreate"
+            data-textcontent="Crear"
+          >
+            Crear
+          </button>
+        </form>
+      </div>
     </div>
 
-    <!-- popUp para agrandar la imagen-->
+    <!-- Edit Image  -->
+
+    <div class="popup popup_image_profile" id="popUpAvatar">
+      <div class="popup__container">
+        <button type="button" class="popup__close-button"></button>
+        <h3 class="popup__title">Cambiar foto de perfil</h3>
+        <form
+          action="#"
+          class="popup__form popup__form_type_profile-image"
+          id="editImageForm"
+          novalidate
+        >
+          <label for="popup-input-image" class="popup__field">
+            <input
+              type="url"
+              name="image-link"
+              placeholder="Imagen URL"
+              id="popUpInputImage"
+              class="popup__input"
+              required
+            />
+            <p id="popUpInputImage-error" class="popup__error popup-input-image-error"></p>
+          </label>
+          <button
+            type="submit"
+            class="popup__button popup__button_type_profile-image"
+            id="btnImageEdit"
+            aria-label="save button"
+          >
+            Guardar
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal Card-->
     <div class="popup popup_img" id="modalPopUp">
       <div class="popup__img">
         <div>
@@ -208,6 +235,25 @@
           />
           <p class="popup__img-title" id="popUpImgTitle"></p>
         </div>
+      </div>
+    </div>
+
+    <!-- Delete Card Pop Up  -->
+    <div class="popup popup_delete_card" id="deleteCard">
+      <div class="popup__container">
+        <button
+          type="button"
+          class="popup__close-button popup__delete-close-button"
+        ></button>
+        <h2 class="popup__title">¿Estás seguro/a?</h2>
+        <button
+          type="submit"
+          class="popup__button"
+          id="btnDelete"
+          data-textcontent="Sí"
+        >
+          Sí
+        </button>
       </div>
     </div>
   </body>
