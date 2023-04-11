@@ -10,7 +10,7 @@
     "deploy": "gh-pages -d dist"
   },
   "keywords": [],
-  "author": "",
+  "author": "javierdamiani",
   "license": "ISC",
   "dependencies": {
     "core-js": "^3.29.1",

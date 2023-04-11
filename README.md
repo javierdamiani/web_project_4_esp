@@ -1,4 +1,4 @@
-# Proyecto 7: Alrededor de los Estados Unidos
+# Proyecto 9: Alrededor de los Estados Unidos
 
 By. Javier Damiani
 
@@ -20,8 +20,13 @@ Se utilizó la tecnología HTML y CSS para la maquetación de la página web, ba
 Actualización del proyecto al 03/08/2023 (8 de Marzo del 2023):
 
 Se organizaron los archivos JavaScript en la carpeta "scripts". Se utilizó la metodología de la programación orientada a objetos para así reestructurar el código, que quede más ordenado y que sea más amigable su lectura. Se crearon los archivos Card.js y FormValidator.js que son la clase creadora de tarjetas y la clase que realiza la validación de formularios respectivamente.
-Por último se creó el arhivo utils.js en donde se almacenan los controladores de eventos (Event Listeners) y las funciones que abren y cierran el modal de las tarjetas. 
+Por último se creó el arhivo utils.js en donde se almacenan los controladores de eventos (Event Listeners) y las funciones que abren y cierran el modal de las tarjetas.
 
-El link para visitar la Web es el siguiente: https://javierdamiani.github.io/web_project_4_esp.github.io/
+En la actualización se realizó el PopUp para borrar las imágenes, las mismas que solo podrán ser eliminadas por el id del usuario que la subió. Se conectó el archivo al API, se gestionaron las solicitudes necesarias para que las tarjetas sean tomadas desde el API. 
+Se reorganizaron los archivos, se aplicó webpack para empaquetar el proyecto. 
+
+Queda pendiente lanzar la página web a través de github pages con la conexión al servidor, debido a que el link de abajo permite visualizar el proyecto hasta la penúltima actualización. Se realizará una vez el proyecto sea aprobado. 
+
+El link para visitar la Web es el siguiente: https://javierdamiani.github.io/web_project_4_esp/
 El link al repositorio de gitHub es:  https://github.com/javierdamiani/web_project_4_esp
 
